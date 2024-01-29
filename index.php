@@ -24,10 +24,10 @@
 
                     <!-- Add Task -->
                     <div class="col-12">
-                        <form class="d-flex justify-content-center px-4 pt-4" action="" method="post">
-                            <input class="align-middle form-control form-control-sm shadow-none border-0 w-75" type="text" placeholder="Add Your Task..." v-model="newTask">
-                            <button type="submit" class="btn btn-sm bg-125768 text-light mx-2">Add Task</button>
-                        </form>
+                        <div class="d-flex justify-content-center px-4 pt-4">
+                            <input class="align-middle form-control form-control-sm shadow-none border-0 w-75" type="text" placeholder="Add Your Task..." @keyup.enter="addTask" v-model="newTask">
+                            <button type="button" class="btn btn-sm bg-125768 text-light mx-2" id="add-task" @click="addTask">Add Task</button>
+                        </div>
                     </div>
     
                     <!-- Tasks List -->
