@@ -1,0 +1,22 @@
+[
+    {
+        "text": "Doing homework",
+        "done": false
+    },
+    {
+        "text": "Go shopping",
+        "done": false
+    },
+    {
+        "text": "Take the dog for a walk",
+        "done": false
+    },
+    {
+        "text": "Finish washing the dishes",
+        "done": false
+    },
+    {
+        "text": "Wash the bathroom",
+        "done": false
+    }
+]
