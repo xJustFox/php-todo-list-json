@@ -50,14 +50,14 @@
                                 <!-- list -->
                                 <li class="d-flex justify-content-between"  v-for="(todo, index) in todoList" :key="index">
                                     <!-- todo item -->
-                                    <span class="my-pointer">{{todo.text}}</span>
+                                    <span class="my-pointer" :class="todo.done ? 'text-decoration-line-through' : ''"  @click="todo.done = !todo.done">{{todo.text}}</span>
                                     
                                     <!-- Buttons trash and check/xmark -->
                                     <span class="mb-1 my-marg">
-                                        <button class="btn border-0">
-                                            <i class="fas fa-check"></i>
+                                        <button class="btn border-0" @click="todo.done = !todo.done">
+                                            <i class="fas" :class=" todo.done == true ? 'fa-check text-success' : 'fa-xmark text-danger' "></i>
                                         </button>
-                                        <button class="btn border-0">
+                                        <button class="btn border-0" @click="deleteTask(index)">
                                             <i class="fas fa-sm fa-trash-can"></i>
                                         </button>
                                     </span>
