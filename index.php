@@ -48,9 +48,9 @@
                                 </li>
 
                                 <!-- list -->
-                                <li class="d-flex justify-content-between">
+                                <li class="d-flex justify-content-between"  v-for="(todo, index) in todoList" :key="index">
                                     <!-- todo item -->
-                                    <span class="my-pointer">TASKS</span>
+                                    <span class="my-pointer">{{todo.text}}</span>
                                     
                                     <!-- Buttons trash and check/xmark -->
                                     <span class="mb-1 my-marg">
