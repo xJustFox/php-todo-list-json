@@ -12,6 +12,14 @@ createApp({
         this.getTodoList();
     },
     methods: {
+        apiPost(data){
+            axios.post(this.apiUrl, data, {
+                headers: {'Content-type': 'multipart/form-data'}
+            }).then((response) => {
+
+                this.todoList = response.data;
+            })
+        },
         deleteTask(index){
             let conf = confirm("Are you sure you want to delete this task?");
             if (conf) {
@@ -19,12 +27,7 @@ createApp({
                     taskIndex: index
                 }
 
-                axios.post(this.apiUrl, data, {
-                    headers: {'Content-type': 'multipart/form-data'}
-                }).then((response) => {
-
-                    this.todoList = response.data;
-                })
+                this.apiPost(data)
             }
         },
         addCheck(done, index){
@@ -34,12 +37,7 @@ createApp({
                     index: index
                 }
 
-                axios.post(this.apiUrl, data, {
-                    headers: {'Content-type': 'multipart/form-data'}
-                }).then((response) => {
-    
-                    this.todoList = response.data;
-                })
+                this.apiPost(data)
             }
             else if (done == true){
                 const data = {
@@ -47,12 +45,7 @@ createApp({
                     index: index
                 }
 
-                axios.post(this.apiUrl, data, {
-                    headers: {'Content-type': 'multipart/form-data'}
-                }).then((response) => {
-    
-                    this.todoList = response.data;
-                })
+                this.apiPost(data)
             }
         },
         addTask(){
