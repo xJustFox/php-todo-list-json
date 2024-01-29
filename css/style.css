@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-image {
+    height: 100vh;
+    background-image: url(../img/lakeside-sunrise-early-morning-minimal-art-gradient-7680x3215-4587.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.box {
+    min-width: 420px;
+    max-width: 30%;
+    border-radius: 10px;
+    background-color: rgba(209, 226, 235, 0.53);
+}
+
+ul>* {
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.my-pointer {
+    cursor: pointer;
+}
+
+.my-marg>* {
+    margin-right: 18px;
+}
+
+.bg-125768 {
+    background-color: #125768;
+}
+
+.bg-125768:hover {
+    background-color: #125768c1;
+}
