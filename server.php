@@ -2,7 +2,16 @@
    $todo_list = file_get_contents('todo-list.json');
 
    $list = json_decode($todo_list, true);
+
+//    delete task
+   if (isset($_POST['taskIndex'])) {
+
+    unset($list[$_POST['taskIndex']]);
+
+    file_put_contents('todo-list.json', json_encode($list));
+   };
    
+//    add task
    if(isset($_POST['text'])){
         $newTask = [
                'text' => $_POST['text'],

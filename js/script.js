@@ -12,6 +12,21 @@ createApp({
         this.getTodoList();
     },
     methods: {
+        deleteTask(index){
+            let conf = confirm("Are you sure you want to delete this task?");
+            if (conf) {
+                const data = {
+                    taskIndex: index
+                }
+                
+                axios.post(this.apiUrl, data, {
+                    headers: {'Content-type': 'multipart/form-data'}
+                }).then((response) => {
+
+                    this.todoList = response.data;
+                })
+            }
+        },
         addTask(){
             const data = {
                 text: this.newTask
