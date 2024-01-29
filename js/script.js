@@ -18,11 +18,39 @@ createApp({
                 const data = {
                     taskIndex: index
                 }
-                
+
                 axios.post(this.apiUrl, data, {
                     headers: {'Content-type': 'multipart/form-data'}
                 }).then((response) => {
 
+                    this.todoList = response.data;
+                })
+            }
+        },
+        addCheck(done, index){
+            if (done == false) {
+                const data = {
+                    done: true,
+                    index: index
+                }
+
+                axios.post(this.apiUrl, data, {
+                    headers: {'Content-type': 'multipart/form-data'}
+                }).then((response) => {
+    
+                    this.todoList = response.data;
+                })
+            }
+            else if (done == true){
+                const data = {
+                    done: false,
+                    index: index
+                }
+
+                axios.post(this.apiUrl, data, {
+                    headers: {'Content-type': 'multipart/form-data'}
+                }).then((response) => {
+    
                     this.todoList = response.data;
                 })
             }

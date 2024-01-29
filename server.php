@@ -3,12 +3,18 @@
 
    $list = json_decode($todo_list, true);
 
+// check task
+    if (isset($_POST['done'])) {
+        $list[$_POST['index']]['done'] = filter_var($_POST['done'], FILTER_VALIDATE_BOOLEAN);;
+
+        file_put_contents('todo-list.json', json_encode($list));
+    };
 //    delete task
    if (isset($_POST['taskIndex'])) {
 
-    unset($list[$_POST['taskIndex']]);
+        unset($list[$_POST['taskIndex']]);
 
-    file_put_contents('todo-list.json', json_encode($list));
+        file_put_contents('todo-list.json', json_encode($list));
    };
    
 //    add task
